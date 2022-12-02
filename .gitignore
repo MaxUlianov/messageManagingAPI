@@ -1,0 +1,11 @@
+# IDE files
+.idea
+
+# Environments
+.venv
+venv/
+
+# database files
+db.sqlite3
+.env
+*.env
