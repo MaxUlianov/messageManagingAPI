@@ -1,0 +1,176 @@
+openapi: 3.0.2
+info:
+  title: 'messageManager'
+  version: '1.0.0'
+paths:
+  /manager/api/mailings:
+    get:
+      operationId: listMailingApis
+      description: Get all mailings
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items: {}
+          description: ''
+      tags:
+      - manager
+    post:
+      operationId: createMailingApi
+      description: 'Create new Mailing object with given parameters and schedule message
+        sending
+
+        with celery
+
+        (Override of parent method)'
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema: {}
+          application/x-www-form-urlencoded:
+            schema: {}
+          multipart/form-data:
+            schema: {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema: {}
+          description: ''
+      tags:
+      - manager
+  /manager/api/mailing/{mailing_id}/:
+    get:
+      operationId: retrieveMailingItemApi
+      description: Get mailing data by mailing id
+      parameters:
+      - name: mailing_id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: ''
+      tags:
+      - manager
+    put:
+      operationId: updateMailingItemApi
+      description: Modify mailing data by mailing id, revoke current task and re-schedule
+        it
+      parameters:
+      - name: mailing_id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema: {}
+          application/x-www-form-urlencoded:
+            schema: {}
+          multipart/form-data:
+            schema: {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: ''
+      tags:
+      - manager
+    delete:
+      operationId: destroyMailingItemApi
+      description: Delete Mailing object,
+      parameters:
+      - name: mailing_id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - manager
+  /manager/api/clients:
+    get:
+      operationId: listClientApis
+      description: Get all clients
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items: {}
+          description: ''
+      tags:
+      - manager
+    post:
+      operationId: createClientApi
+      description: Add new client
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema: {}
+          application/x-www-form-urlencoded:
+            schema: {}
+          multipart/form-data:
+            schema: {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema: {}
+          description: ''
+      tags:
+      - manager
+  /manager/api/messages:
+    get:
+      operationId: listMessageApis
+      description: Get all messages
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items: {}
+          description: ''
+      tags:
+      - manager
+    post:
+      operationId: createMessageApi
+      description: Create new object (mailing, client, message) with given parameters
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema: {}
+          application/x-www-form-urlencoded:
+            schema: {}
+          multipart/form-data:
+            schema: {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema: {}
+          description: ''
+      tags:
+      - manager
