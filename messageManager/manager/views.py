@@ -173,7 +173,7 @@ class MailingItemApiView(ObjectDetailsApiView):
 
     def delete(self, request, object_id, *args, **kwargs):
         """
-        Delete Mailing object,
+        Delete Mailing object
         """
         instance = self.get_object(object_id, Mailing)
         if not instance:
