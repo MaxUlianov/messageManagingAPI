@@ -1,4 +1,3 @@
-# from .serializers import MessageSerializer, ClientSerializer, MailingSerializer
 from .models import Message, Client, Mailing
 from celery import shared_task
 import requests
